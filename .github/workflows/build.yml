@@ -18,15 +18,13 @@ jobs:
 
     - name: Install Mush
       run: |
-        curl -s https://raw.githubusercontent.com/javanile/mush/main/install.sh | bash
-        echo "$HOME/.mush/bin" >> $GITHUB_PATH
+        mush
 
-    - name: Clone Mush repo
-      run: git clone https://github.com/javanile/mush.git
+    
 
     - name: Run Mush script
       run: |
         mush --version
         # replace with your actual mush script path and arguments
-        mush ./src/main.sh
+        mush /src/main.sh
 
