@@ -1,0 +1,14 @@
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          git clone https://github.com/javanile/mush.git
+          sudo ln -s $PWD/mush/mush /usr/local/bin/mush
+          mush build --release
